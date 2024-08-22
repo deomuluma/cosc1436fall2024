@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+/.vs
+/classwork/chaptre1/.vs/chaptre1
