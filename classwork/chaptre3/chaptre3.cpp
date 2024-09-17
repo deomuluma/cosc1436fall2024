@@ -72,88 +72,92 @@ int main()
         // double = int * double
         // double = double * double (type coercion)
         // double = double
-    double result = hours * payRate;
+double result = hours * payRate;
 
 
-    //Precedence rules don't apply, just find the largest type
-        // double + float * int => double
+//Precedence rules don't apply, just find the largest type
+    // double + float * int => double
 
-        //Assignment doesn't matter, types determined on each type of eeach side of operator
-        // double = int * float
-
-
-     //Overflow and underflow
-    short smallValue = 32767 + 1; //Overflow
-    std::cout << smallValue << std::endl;
-
-    short largeValue = -32768 - 1; //Underflow
-    std::cout << largeValue << std::endl;
+    //Assignment doesn't matter, types determined on each type of eeach side of operator
+    // double = int * float
 
 
-    float floatValue = 1e38 * 2e20;
-    std::cout << floatValue << std::endl;
+ //Overflow and underflow
+short smallValue = 32767 + 1; //Overflow
+std::cout << smallValue << std::endl;
+
+short largeValue = -32768 - 1; //Underflow
+std::cout << largeValue << std::endl;
 
 
-     //Typecasting - you convert an expression to another type explicitly
-    int totalSales = 50000;
-    int departments = 8;
-
-     // static_cast<T>(E) => preferred
-    //   // (T)E => C-style, not recommended
-    //   Must be allowable
-    //double averageSalesPerDepartment = static_cast<double>(totalSales) / departments;
-    double averageSalesPerDepartment = totalSales / static_cast<double>(departments);
-     //Compiler error, cannot convert from string to int
-    std::string someString = "Hello";
-    //int someStringNumber = static_cast<int>(someString);
-     //Use cast to truncated data w/o compiler warning
-    int truncatedValue = static_cast<int>(floatValue);
-
-      //Math functions
-    // pow(x, y) => x to the y power
-    // sqrt(x) => square root of x
-    // exp(x) => e to the x power
-    // log(x) => log of x  log(exp(x)) = x
-    // sin(x), cos(x), tan(x), cot(x), sec(x), csc(x), ...h
-    // abs(x) => positive value of x
-    double xValue = 45.6;
-    double mathResult;
-
-    std::cout << pow(xValue, 2);  //xValue * xValue
-    std::cout << sqrt(xValue);
-
-    std::cout << exp(2);  // e nth power, e = 2.718
-    std::cout << log(5.4);  // root of e
+float floatValue = 1e38 * 2e20;
+std::cout << floatValue << std::endl;
 
 
-    std::cout << abs(-45);  // positive X = 45
+ //Typecasting - you convert an expression to another type explicitly
+int totalSales = 50000;
+int departments = 8;
 
-    std::cout << ceil(xValue);     // 46
-    std::cout << floor(xValue);    // 45
+ // static_cast<T>(E) => preferred
+//   // (T)E => C-style, not recommended
+//   Must be allowable
+//double averageSalesPerDepartment = static_cast<double>(totalSales) / departments;
+double averageSalesPerDepartment = totalSales / static_cast<double>(departments);
+ //Compiler error, cannot convert from string to int
+std::string someString = "Hello";
+//int someStringNumber = static_cast<int>(someString);
+ //Use cast to truncated data w/o compiler warning
+int truncatedValue = static_cast<int>(floatValue);
 
-    std::cout << trunc(xValue);
-    std::cout << round(xValue);   // 46
+  //Math functions
+// pow(x, y) => x to the y power
+// sqrt(x) => square root of x
+// exp(x) => e to the x power
+// log(x) => log of x  log(exp(x)) = x
+// sin(x), cos(x), tan(x), cot(x), sec(x), csc(x), ...h
+// abs(x) => positive value of x
+double xValue = 45.6;
+double mathResult;
 
-    //Formatted output
-    std::cout << 4.567891241415151 << std::endl;
-    std::cout << 5.67e3 << std::endl;
+std::cout << pow(xValue, 2);  //xValue * xValue
+std::cout << sqrt(xValue);
 
-     // Create a table
-    // Manipulator | behavior | Persist
-    // --------
-    //  setw(i) | pads the value to i | No
-    //  left | Left justifies | Yes
-    //  right | Right justifies (default) | Yes
-    
-    cout << left << setw(8) << "Student" << setw(6) << "Grade" << setw(6) << "Letter" << endl;
-    cout << setw(20) << setfill('-') << "" << setfill(' ') << endl;
-    //cout << fixed;
-    cout << setprecision(2);
-    cout << setw(8) << "Bob" << setw(6) << 95.67 << "A" << endl;
-    cout << setw(8) << "Sue" << setw(6) << 98.543 << "A" << endl;
-    cout << setw(8) << "Jim" << setw(6) << 84.567 << "B" << endl;
-    cout << setw(8) << "Jan" << setw(6) << 78.987 << "C" << endl;
+std::cout << exp(2);  // e nth power, e = 2.718
+std::cout << log(5.4);  // root of e
+
+
+std::cout << abs(-45);  // positive X = 45
+
+std::cout << ceil(xValue);     // 46
+std::cout << floor(xValue);    // 45
+
+std::cout << trunc(xValue);
+std::cout << round(xValue);   // 46
+
+//Formatted output
+std::cout << 4.567891241415151 << std::endl;
+std::cout << 5.67e3 << std::endl;
+
+ // Create a table
+// Manipulator | behavior | Persist
+// --------
+//  setw(i) | pads the value to i | No
+//  left | Left justifies | Yes
+//  right | Right justifies (default) | Yes
+
+cout << left << setw(8) << "Student" << setw(6) << "Grade" << setw(6) << "Letter" << endl;
+cout << setw(20) << setfill('-') << "" << setfill(' ') << endl;
+//cout << fixed;
+cout << setprecision(2);
+cout << setw(8) << "Bob" << setw(6) << 95.67 << "A" << endl;
+cout << setw(8) << "Sue" << setw(6) << 98.543 << "A" << endl;
+cout << setw(8) << "Jim" << setw(6) << 84.567 << "B" << endl;
+cout << setw(8) << "Jan" << setw(6) << 78.987 << "C" << endl;
 }
+
+
+
+
 
 
 
